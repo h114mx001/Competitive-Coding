@@ -5,5 +5,5 @@ int main(){
     freopen("task.out","w",stdout);
     string n;
     cin >> n;
-    cout << "This is " << n << ". Hello World!";
+    cout << "This is " << n << ". I'm from SCL. Hello World!";
 }
