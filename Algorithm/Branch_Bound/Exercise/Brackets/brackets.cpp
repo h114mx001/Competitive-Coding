@@ -2,51 +2,57 @@
 using namespace std;
 int arr[100];
 int n;
-int level;
+int depth;
 string brackets = "()";
-bool checkValid(){
+bool checkValid(int j){
     int sum = 0;
-    for (int i = 1; i <= n; i++){
+    for (int i = 1; i <= j; i++){
         if (arr[i] == 0){
             ++sum;
         } else --sum;
         if (sum < 0) return false;
     } 
-    if (sum == 0) return true; else return false;
+    if (j < n){
+        return true;
+    }
+    else if (sum == 0) return true; else return false;
 }
-int checkLevel(int j){
-    int level = 1; 
-    int max = 0;
-    for (int i = 1; i <= j - 1; i++){
-        if (arr[i] == arr[i + 1]){
+bool checkLevel(int j){
+    int max, level = 1;
+    max = 0;
+    for (int i = 2; i <= j; i++){
+        if (arr[i] == arr[i-1]){
             ++level;
             if (level > max) max = level;
         }
         else level = 1;
     }
-    return max;
+    if (j < n)
+    {
+        if (max <= depth) return true; else return false;
+    }
+    else{
+        if (max == depth) return true; else return false;
+    }
 }
 void printResult(){
-    if (checkValid() && checkLevel(n) == level){
-        for (int i = 1; i <= n; i++){
+    for (int i = 1; i <= n; i++){
         cout << brackets[arr[i]];
-        }
-        cout << endl;
     }
+    cout << endl;
 }
 void Attempt(int i){
     for (int j = 0; j <= 1; j++){
         arr[i] = j;
-        if (i == n - 1){
-            printResult();
+        if (checkValid(i) && checkLevel(i)){
+            if (i == n) printResult();
+            else Attempt(i+1);
         }
-        else Attempt(i+1);
     }
 }
 int main(){
+    freopen("task.inp","r",stdin);
     freopen("task.out","w",stdout);
-    arr[1] = 0;
-    cin >> n >> level;
-    arr[n] = 1;
-    Attempt(2);
+    cin >> n >> depth;
+    Attempt(1);
 }

@@ -1,0 +1,13 @@
+Một dãy dấu ngoặc hợp lệ là một dãy các kí tự "(" và ")" được định nghĩa như sau:
+1. Dãy rỗng là dãy dấu ngoặc hợp lệ độ sâu 0;
+2. Nếu A là dãy dấu ngoặc hợp lệ độ sâu k thì (A) là dãy ngoặc độ sâu k+1;
+3. Nếu A và B là 2 dãy dấu ngoặc hợp lệ với độ sâu lần lượt là p và q thì AB
+là dãy dấu ngoặc hợp lệ max(p,q);
+Độ dài của một dãy ngoặc là tổng số kí tự "(" và ")"
+Cho độ dài n và độ sâu k; liệt kê các dãy ngoặc hợp lệ độ dài n độ sâu k
+VD: n = 8, k = 3;
+((()()))
+((())())
+((()))()
+(()(()))
+()((()))
