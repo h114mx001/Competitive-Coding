@@ -1,0 +1,48 @@
+Cho một bãi mìn kích thước mxn ô vuông, trên một ô có thể có chứa một quả mìn hoặc không,
+để biểu diễn bản đồ mìn đó, người ta có hai cách:
+Cách 1: dùng bản đồ đánh dấu: sử dụng một lưới ô vuông kích thước mxn, trên đó tại ô (i, j)
+ghi số 1 nếu ô đó có mìn, ghi số 0 nếu ô đó không có mìn
+Cách 2: dùng bản đồ mật độ: sử dụng một lưới ô vuông kích thước mxn, trên đó tại ô (i, j) ghi
+một số trong khoảng từ 0 đến 8 cho biết tổng số mìn trong các ô lân cận với ô (i, j) (ô lân cận
+với ô (i, j) là ô có chung với ô (i, j) ít nhất 1 đỉnh).
+Giả thiết rằng hai bản đồ được ghi chính xác theo tình trạng mìn trên hiện trường.
+Về nguyên tắc, lúc cài bãi mìn phải vẽ cả bản đồ đánh dấu và bản đồ mật độ, tuy nhiên sau
+một thời gian dài, khi người ta muốn gỡ mìn ra khỏi bãi thì vấn đề hết sức khó khăn bởi bản
+đồ đánh dấu đã bị thất lạc !!. Công việc của các lập trình viên là: Từ bản đồ mật độ, hãy tái
+tạo lại bản đồ đánh dấu của bãi mìn.
+Dữ liệu: Vào từ file văn bản MINE.INP, các số trên 1 dòng cách nhau ít nhất 1 dấu cách
++ Dòng 1: Ghi 2 số nguyên dương m, n (2 ≤ m, n ≤ 30)
++ m dòng tiếp theo, dòng thứ i ghi n số trên hàng i của bản đồ mật độ theo đúng thứ tự từ trái
+qua phải.
+Kết quả: Ghi ra file văn bản MINE.OUT, các số trên 1 dòng ghi cách nhau ít nhất 1 dấu
+cách
++ Dòng 1: Ghi tổng số lượng mìn trong bãi
++ m dòng tiếp theo, dòng thứ i ghi n số trên hàng i của bản đồ đánh dấu theo đúng thứ tự từ
+trái qua phải.
+Ví dụ:
+MINE.INP
+
+10 15
+0 3 2 3 3 3 5 3 4 4 5 4 4 4 3
+1 4 3 5 5 4 5 4 7 7 7 5 6 6 5
+1 4 3 5 4 3 5 4 4 4 4 3 4 5 5
+1 4 2 4 4 5 4 2 4 4 3 2 3 5 4
+1 3 2 5 4 4 2 2 3 2 3 3 2 5 2
+2 3 2 3 3 5 3 2 4 4 3 4 2 4 1
+2 3 2 4 3 3 2 3 4 6 6 5 3 3 1
+2 6 4 5 2 4 1 3 3 5 5 5 6 4 3
+4 6 5 7 3 5 3 5 5 6 5 4 4 4 3
+2 4 4 4 2 3 1 2 2 2 3 3 3 4 2
+MINE.OUT
+
+1 0 1 1 1 1 0 1 1 1 1 1 1 1 1  
+0 0 1 0 0 1 1 1 0 1 1 1 0 1 1  
+0 0 1 0 0 1 0 0 1 1 1 0 0 1 1  
+1 0 1 1 1 0 0 1 0 0 0 0 0 1 1  
+1 0 0 0 1 1 1 0 0 1 0 0 1 0 1  
+0 0 0 0 1 0 0 0 0 1 1 0 1 0 0  
+0 1 1 0 0 1 0 0 1 1 0 0 1 0 0  
+1 0 1 0 1 0 1 0 1 1 1 1 0 1 0  
+0 1 1 0 1 0 0 0 0 0 1 1 1 1 1  
+1 1 1 1 1 0 1 1 1 1 0 0 0 0 1  
+80
