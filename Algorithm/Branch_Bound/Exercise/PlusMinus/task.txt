@@ -1,0 +1,5 @@
+Cho mot so M, mot xau S chi chua cac chu so tu 0 -> 9; tim cach dien dau "+" / "-" giua cac so de cho
+ket qua la M.
+VD:
+M = 8; S = '1234567' thi cach chen la:
+-1+2-3+4+5-8-7

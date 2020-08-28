@@ -1,0 +1,19 @@
+Nhap vao mot so n (1 <= n <=9), in ra cac so sieu nguyen to co n chu so.
+VD: n = 4; 
+Co 16 so: 
+2333
+2339
+2393
+2399
+2939
+3119
+3137
+3733
+3739
+3793
+3797
+5939
+7193
+7331
+7333
+7393
