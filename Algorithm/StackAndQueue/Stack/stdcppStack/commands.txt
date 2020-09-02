@@ -1,0 +1,5 @@
+<stackName>.size => Stack's size now. O(1)
+<stackName>.empty => whether stack is empty or not O(1)
+<stackName>.push => add an element into stack. O(1)
+<stackName>.pop => remove an element from stack's top O(1)
+<stackName>.top => return the top's element
