@@ -1,0 +1,6 @@
+.size() => so luong phan tu cua queue;
+.empty() => kiem tra queue co phan tu hay khong?
+.front() => phan tu dau tien duoc them vao
+.back() => phan tu cuoi cung duoc them vao
+.push(x) => them mot phan tu vao cuoi queue
+.pop() => cho ra phan tu o dau queue
