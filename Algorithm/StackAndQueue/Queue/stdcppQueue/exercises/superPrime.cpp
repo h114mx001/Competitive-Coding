@@ -16,8 +16,29 @@ bool isPrime(int n)
 } 
 std::vector<int> superPrimeNumber(int n)
 {
+    vector <int> res;
+    queue <int> number;
+    for (int i = 2; i < 10; i++){
+        if (isPrime(i)){
+            number.push(i);
+        }
+    }
+    while (!number.empty()){
+        for (int i = 0; i <= 6; i++){
+            int k = number.front()*10 + arr[i];
+            if (isPrime(k) && k <= n){
+                number.push(number.front()*10+arr[i]);
+            }
+        }
+        res.push_back(number.front());
+        number.pop();
+    }
+    return res;
 
 }
 int main(){
-
+    vector <int> result = superPrimeNumber(30);
+    for (int i = 0; i < result.size(); i++){
+        cout << result[i] << " ";
+    }
 }
