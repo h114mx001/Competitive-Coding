@@ -2,7 +2,7 @@
 using namespace std;
 int multiply(int x, int res[], int res_size);
 void factorial(int n){
-    int res[500];
+    int res[100000];
     res[0] = 1;
     int res_size = 1;
     for (int i = 2; i <= n; i++){
