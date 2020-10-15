@@ -36,7 +36,7 @@ string subBigNum(string a, string b){
     } 
     return c;
 }
-
+//MultiBig vs Small
 string multiBigvsSmall (string a, long int b){
     string tmp,c = "";
     int carry,sum = 0;
@@ -50,8 +50,28 @@ string multiBigvsSmall (string a, long int b){
     c = tmp + c;
     return c;
 }
-string multiplyBigvsBig (string a, string b){
+string multiBigvsBig (string a, string b){
     string sum, tmp = "";
     int m = -1;
-    
+    for (int i = a.length() - 1; i >= 0; i--){
+        m++;
+        string plus = "";
+        tmp = multiBigvsSmall(b, a[i] - '0');
+        for (int j = 1; j <= m; j++){
+            tmp = tmp + '0';
+            plus = plus + '0';
+        }
+        if (plus != "") plus = '1' + plus;
+        sum = addBigNum(tmp, addBigNum(sum, plus));
+    }
+    return sum;
 }
+//mod bigvsSmall
+int modBigvsSmall (string a, int b){
+    int hold = 0;
+    for (int i = 0; i < a.length(); i++){
+        hold = (a[i] - '0'+hold*10) % b;
+    }
+    return hold;
+}
+//power big
