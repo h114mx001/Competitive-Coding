@@ -1,0 +1,6 @@
+%d:            int (signed decimal integer)
+%u:            unsigned decimal integer
+%f:            floating point values (fixed notation) - float, double
+%e:            floating point values (exponential notation)
+%s:            string
+%c:            character
