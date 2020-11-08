@@ -37,7 +37,7 @@ string subBigNum(string a, string b){
     return c;
 }
 //MultiBig vs Small
-string multiBigvsSmall (string a, long int b){
+string multiBigvsSmall (string a, int b){
     string tmp,c = "";
     int carry,sum = 0;
     for (int i = a.length()-1; i >= 0; i--){
@@ -75,3 +75,12 @@ int modBigvsSmall (string a, int b){
     return hold;
 }
 //power big
+//
+
+int compare(string a, string b){
+    while (a.length() < b.length()) a = '0' + a;
+    while (a.length() > b.length()) b = '0' + b;
+    if (a == b) return 0;
+    if (a < b) return -1;
+    return -1;
+}

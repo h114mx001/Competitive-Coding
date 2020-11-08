@@ -14,15 +14,16 @@ int main(){
 
     int sum = 0;
     for (int i = 0; i < n; i++){
-        while (list[i] > 0){
-            int j = i;
-            sum = n - j;
-            int sub = list[j];
-        } 
-        for (int k = j; k < n; k++){
-                list[k]-=sub;
-                if (list[k] > 0) sum--;
+        if (list[i] > 0){
+            int minus = list[i];
+            for (int j = i; j < n; j++){
+                if (list[j] >= minus){
+                    sum++;
+                    list[j]-=minus;
+                }
             }
-        cout << sum << endl;
+            cout << sum << "\n";
+            sum = 0;
+        }
     }
 }

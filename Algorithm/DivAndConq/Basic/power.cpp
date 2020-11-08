@@ -1,8 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
-unsigned long long int powr(long int a, long int n){
+long long int powr(long int a, long int n){
     if (n == 1) return a;
-    unsigned long long int tmp = powr(a, n/2);
+    long long int tmp = powr(a, n/2);
     if (n % 2 == 0){
         return tmp*tmp;
     }
