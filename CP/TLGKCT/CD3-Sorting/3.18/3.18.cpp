@@ -20,8 +20,14 @@ int main(){
     }
     sort(arr1, arr1+n);
     sort(arr2, arr2+n);
-    if (abs(arr1[0] + arr2[0]) < abs(arr1[n-1] + arr2[n-1])){
-        cout << arr1[0] + arr2[0];
+    int smallestVal = -1;
+    int left = 0;
+    int right = n - 1;
+    while (left <= n - 1 || right >= 0|| smallestVal != 0){
+        smallestVal = arr2[right] + arr1[left];
+        if (smallestVal < 0 && left < n - 1) left++;
+            else if (smallestVal > 0 && right > 0) right--;
+                else break;
     }
-    else cout << arr1[n-1] + arr2[n-1];
+    cout << smallestVal << endl;
 }
