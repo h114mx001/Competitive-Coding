@@ -1,0 +1,13 @@
+Given a number. Start from 1, you can plus 1 with the number, or change the order of its digits
+No 0 at the 1st digit. Calculate the smallest steps you can convert 1 => the given number.
+
+eg
+3
+2
+559
+21
+
+out:
+1
+48
+12
