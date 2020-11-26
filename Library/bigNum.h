@@ -84,3 +84,17 @@ int compare(string a, string b){
     if (a < b) return -1;
     return -1;
 }
+
+string divBigvsSmall(string a, int b){
+    int s, hold;
+    string c;
+    hold = 0; s = 0; c ="";
+    for (int i = 0; i < a.length(); i++){
+        hold = hold*10 + (a[i] - '0');
+        s = hold/b;
+        hold = hold%b;
+        c = c + (char(s+48));
+    }
+    while (c.length() > 1 && c[0] == '0') c.erase(0,1);
+    return c;
+}
