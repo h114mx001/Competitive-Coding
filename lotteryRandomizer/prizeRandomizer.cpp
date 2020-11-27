@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 #include <unistd.h>
+#include <iomanip>
 using namespace std;
 map <string,int> sourceHadPrizes;
 int main(){
@@ -57,7 +58,7 @@ int main(){
         cout << "CONGRATULATION! THESE LUCKY GUYS WIN THE " << nameOfPrizes << " PRIZE! \n";
         int count = 0;
         while (count < numOfPrizes){
-            sleep(4);
+            // sleep(4);
             int index = (rand() % size);
             while (subHadPrize[IDQuery[index]] == 1 || isTicketHadAPrize[index] == true){
                 index = (rand() % size);
@@ -67,7 +68,7 @@ int main(){
             count++;
             string stringID = to_string(index+1);
             while (stringID.length() < 3) stringID = '0' + stringID; 
-            cout << stringID << " " << IDQuery[index] << "\n";  
+            cout << "|" << setw(2) << count << "|" << setw(4) << "|" <<  stringID  << "|" << setw(4) << "|" << setw(30) << IDQuery[index]  << "|" "\n";  
         }
         cout << "======================================================================\n";
     }
