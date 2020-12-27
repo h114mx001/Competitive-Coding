@@ -10,8 +10,11 @@ int main(){
     IOInit();
     int n, d;
     cin >> n >> d;
-    int arr[n];
+    vector <int> arr;
+    int x;
     for (int i = 0; i < n; i++){
-        cin >> arr[i];
-    }
+        cin >> x;
+        arr.push_back(x);
+    }        
+    
 }

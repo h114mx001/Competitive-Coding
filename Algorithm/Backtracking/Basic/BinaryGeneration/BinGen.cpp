@@ -26,6 +26,8 @@ void Attempt(int i){
     }
 }
 int main(){
+    ios::sync_with_stdio(0);
+    cin.tie(0);
     freopen("task.out","w",stdout);
     cin >> n;
     Attempt(0);
